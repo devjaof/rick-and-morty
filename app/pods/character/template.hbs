@@ -1,0 +1,56 @@
+<h2>Characters</h2>
+<div class="buttons">
+  <button class="btn">back</button>
+  <button class="btn">next</button>
+</div>
+
+  <div class="grid-container">
+  {{#each this.model as |character|}}
+    <div class="grid-item">
+      <span>
+        <p class="title">Name:</p> 
+        <p class="descrition">{{character.name}}</p>
+      </span>
+
+      <span>
+        <p class="title">Status:</p>
+        <p class="descrition">{{character.status}}</p>
+      </span>
+
+      <span>
+        <p class="title">Species:</p>
+        <p class="descrition">{{character.species}}</p>
+      </span>
+
+      <span>
+        <p class="title">Type:</p> 
+        <p class="descrition">{{character.type}}</p>
+      </span>
+
+      <span>
+        <p class="title">Gender:</p> 
+        <p class="descrition">{{character.gender}}</p>
+      </span>
+
+      <span>
+        <p class="title">Origin:</p> 
+        <p class="descrition">{{character.origin.name}}</p>
+      </span>
+
+      <span>
+        <p class="title">Location:</p> 
+        <p class="descrition">{{character.location.name}}</p>
+      </span>
+
+      <img src="{{character.image}}">
+    </div>
+  
+    {{else}}
+      <p>Nada para ver aqui :/</p>
+    {{/each}}
+  </div>
+<div class="buttons">
+  <button class="btn">back</button>
+  <button class="btn">next</button>
+</div>
+
