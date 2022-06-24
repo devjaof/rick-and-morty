@@ -8,4 +8,6 @@ export default class Router extends EmberRouter {
 
 Router.map(function () {
   this.route('character');
+  this.route('location');
+  this.route('episode');
 });

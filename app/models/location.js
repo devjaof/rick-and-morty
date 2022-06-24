@@ -5,4 +5,5 @@ export default class LocationModel extends Model {
   @attr('string') type;
   @attr('string') dimension;
   @attr('string') residents;
+  @attr('string') url;
 }
