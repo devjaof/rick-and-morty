@@ -1,9 +1,8 @@
 # Todas as informações sobre Rick and Morty!
-
 ## Pré-requisitos
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
+* [Node.js](https://nodejs.org/) (com npm)
 * [Ember CLI](https://cli.emberjs.com/release/)
 
 ## Instalando
@@ -22,3 +21,5 @@
 - Clean Code;
 - Componentes;
 - Bootstrap;
+
+### Ps: O site está em inglês para combinar com a API hehe
