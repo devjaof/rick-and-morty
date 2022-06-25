@@ -22,4 +22,4 @@
 - Componentes;
 - Bootstrap;
 
-### Ps: O site está em inglês para combinar com a API hehe
+Ps: O site está em inglês para combinar com a API hehe
