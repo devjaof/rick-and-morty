@@ -21,3 +21,4 @@
 - Mobile First;
 - Clean Code;
 - Componentes;
+- Bootstrap;
