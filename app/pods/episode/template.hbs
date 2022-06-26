@@ -1,37 +1,22 @@
 <h2>Episodes</h2>
-<div class="buttons">
-  <button class="btn" id="back">back</button>
-  <button class="btn" id="next">next</button>
-</div>
-
-  <div class="grid-container">
-  {{#each this.model.results as |episode|}}
-    <div class="grid-item">
-      <span>
-        <p class="title">Name:</p> 
-        <p class="descrition">{{episode.name}}</p>
-      </span>
-
-      <span>
-        <p class="title">Episode:</p>
-        <p class="descrition">{{episode.episode}}</p>
-      </span>
-
-      <span>
-        <p class="title">Date:</p>
-        <p class="descrition">{{episode.air_date}}</p>
-      </span>
-      {{!-- <span>
-        <a href="{{location.url}}">aaaaaa</a>
-      </span> --}}
+ <div class="container">
+    <form class="d-flex m-2" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    {{#each this.model.results as |episode|}}
+    <div class="card mb-2 p-2">
+      <div class="body">
+        <h5 class="card-title">{{episode.name}}</h5> 
+        <p class="card-text">episode: {{episode.episode}}</p>
+        <p class="card-text">Date: {{episode.air_date}}</p>
+      </div>
     </div>
-  
     {{else}}
       <p>Nada para ver aqui :/</p>
     {{/each}}
   </div>
 <div class="buttons">
-  <button class="btn">back</button>
-  <button class="btn">next</button>
+  <button type="button" class="btn btn-outline-secondary m-2" id="back">back</button>
+  <button type="button" class="btn btn-outline-secondary m-2" id="next">next</button>
 </div>
-
