@@ -1,28 +1,44 @@
-<h2 class="mt-2">Characters</h2>
-  <div class="container">
-    <form class="d-flex m-2" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    {{#each this.model.results as |character|}}
-    <div class="card mb-2">
-      <img class="card-img-top" src="{{character.image}}" alt="Card image cap">
-      <div class="body p-2">
-        <h5 class="card-title">{{character.name}}</h5> 
-        <p class="card-text">Status: {{character.status}}</p>
-        <p class="card-text">Species: {{character.species}}</p>
-        <p class="card-text">Type: {{character.type}}</p>
-        <p class="card-text">Gender: {{character.gender}}</p>
-        <p class="card-text">Origin: {{character.origin.name}}</p>
-        <p class="card-text">Location: {{character.location.name}}</p>
+<h2 class='mt-2'>Characters</h2>
+<div class='container'>
+  <form class='d-flex m-2' role='search'>
+    <input
+      class='form-control me-2'
+      type='search'
+      placeholder='Search'
+      aria-label='Search'
+    />
+    <button class='btn btn-outline-success' type='submit'>Search</button>
+  </form>
+  {{#each this.model.results as |character|}}
+    <div class='card mb-2'>
+      <img
+        class='card-img-top'
+        src='{{character.image}}'
+        alt='Card image cap'
+      />
+      <div class='body p-2'>
+        <h5 class='card-title'>{{character.name}}</h5>
+        <p class='card-text'>Status: {{character.status}}</p>
+        <p class='card-text'>Species: {{character.species}}</p>
+        <p class='card-text'>Type: {{character.type}}</p>
+        <p class='card-text'>Gender: {{character.gender}}</p>
+        <p class='card-text'>Origin: {{character.origin.name}}</p>
+        <p class='card-text'>Location: {{character.location.name}}</p>
       </div>
     </div>
-    {{else}}
-      <p>Nada para ver aqui :/</p>
-    {{/each}}
-  </div>
-<div class="buttons">
-  <button type="button" class="btn btn-outline-secondary m-2" id="back">back</button>
-  <button type="button" class="btn btn-outline-secondary m-2" id="next">next</button>
+  {{else}}
+    <p>Nada para ver aqui :/</p>
+  {{/each}}
 </div>
-
+<div class='buttons'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary m-2'
+    id='back'
+  >back</button>
+  <button
+    type='button'
+    class='btn btn-outline-secondary m-2'
+    id='next'
+  >next</button>
+</div>
