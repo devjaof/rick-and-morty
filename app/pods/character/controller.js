@@ -3,7 +3,6 @@ import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object'
 import { task } from 'ember-concurrency';
-
 export default class CharacterController extends Controller {
   @service store;
 
@@ -11,13 +10,6 @@ export default class CharacterController extends Controller {
   @tracked page = 1;
   @tracked name = '';
   @tracked search;
-
-  @task
-  *findRecords(){
-    this.name = this.search;
-    
-    this.loadCharacters();
-  };
 
   @action 
   nextPage() {
@@ -35,13 +27,16 @@ export default class CharacterController extends Controller {
       character: results
     });
 
-    if(this.search){
-      this.records = this.store.findAll('character')
-      .then(results => results.filter((character) => {
-        return character.get('name') === this.search;
-      }));
-    };
     this.records = this.store.findAll('character');
+  };
 
+  @task 
+  *filterRecords() {
+    if(!this.search) {return};
+    this.records = this.store.query('character', {
+      filter: {
+        name: this.search
+      }
+    });
   };
 }

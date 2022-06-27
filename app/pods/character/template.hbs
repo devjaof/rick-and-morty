@@ -3,7 +3,7 @@
   <form class=' m-2 w-100' role='search'>
     <div class="form-group w-100 d-flex">
       <Input class="form-control" @value={{this.search}} />
-      <button {{on "click" (perform this.findRecords)}} class='btn btn-outline-success'>Search</button>
+      <button {{on "click" (perform this.filterRecords)}} class='btn btn-outline-success'>Search</button>
     </div>
   </form>
   <div class='row'>
@@ -27,7 +27,6 @@
     {{else}}
       <p>Nada para ver aqui :/</p>
     {{/each}}
-    {{log this.records}}
     <Buttons @nextPage={{fn this.nextPage}}/>
   </div>
 </div>
