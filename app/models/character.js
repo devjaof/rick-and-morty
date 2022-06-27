@@ -7,4 +7,7 @@ export default class CharacterModel extends Model {
   @attr('string') type;
   @attr('string') gender;
   @attr('string') image;
+
+  // @belongsTo('location') location;
+  // @belongsTo('location') location;
 }

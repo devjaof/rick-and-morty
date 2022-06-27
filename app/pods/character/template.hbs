@@ -2,13 +2,13 @@
 <div class='container' {{did-insert (fn this.loadCharacters)}}>
   <form class=' m-2 w-100' role='search'>
     <div class="form-group w-100 d-flex">
-      <Input class="form-control" @value={{this.term}} />
+      <Input class="form-control" @value={{this.search}} />
       <button {{on "click" (perform this.findRecords)}} class='btn btn-outline-success'>Search</button>
     </div>
   </form>
   <div class='row'>
     {{#each this.records as |character|}}
-      <div class='card col-md-3' >
+      <div class='card col-md-3'>
         <img
           class='card-img-top mt-2'
           src='{{character.image}}'
@@ -20,8 +20,8 @@
           <p class='card-text'>Species: {{character.species}}</p>
           <p class='card-text'>Type: {{character.type}}</p>
           <p class='card-text'>Gender: {{character.gender}}</p>
-          <p class='card-text'>Origin: {{character.originName}}</p>
-          <p class='card-text'>Location: {{character.locationName}}</p>
+          <p class='card-text'>Origin: {{character.origin.name}}</p>
+          <p class='card-text'>Location: {{character.location.name}}</p>
         </div>
       </div>
     {{else}}

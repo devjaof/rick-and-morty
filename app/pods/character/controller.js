@@ -10,7 +10,21 @@ export default class CharacterController extends Controller {
   @tracked records = [];
   @tracked page = 1;
   @tracked name = '';
-  @tracked term = '';
+  @tracked search;
+
+  @task
+  *findRecords(){
+    this.name = this.search;
+    
+    this.loadCharacters();
+  };
+
+  @action 
+  nextPage() {
+    this.page += 1;
+
+    this.loadCharacters();
+  };
 
   @action
   async loadCharacters() {
@@ -21,20 +35,13 @@ export default class CharacterController extends Controller {
       character: results
     });
 
+    if(this.search){
+      this.records = this.store.findAll('character')
+      .then(results => results.filter((character) => {
+        return character.get('name') === this.search;
+      }));
+    };
     this.records = this.store.findAll('character');
+
   };
-
-  @action 
-  nextPage() {
-    this.page += 1;
-
-    this.loadCharacters();
-  };
-
-  @task
-  *findRecords(){
-    this.name = this.term;
-    
-    this.loadCharacters();
-  }
 }
