@@ -1,17 +1,15 @@
 <h2 class='mt-2'>Characters</h2>
 <Buttons />
 <div class='container'>
-  <form class='d-flex m-2' role='search'>
-    <input
-      class='form-control me-2'
-      type='search'
-      placeholder='Search'
-      aria-label='Search'
-    />
-    <button class='btn btn-outline-success' type='submit'>Search</button>
+  <form class=' m-2 w-100' role='search'>
+     <div class="form-group w-100 d-flex">
+      <Input class="form-control" @placeholder="Search by name"/>
+      <button class='btn btn-outline-success' type='submit'>Search</button>
+    </div>
   </form>
   <div class='row'>
-    {{#each this.model.results as |character|}}
+  
+    {{#each this.model as |character|}}
       <div class='card col-md-3'>
         <img
           class='card-img-top mt-2'
