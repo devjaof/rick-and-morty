@@ -14,7 +14,7 @@
 ## Rodando
 
 * `npm start`
-* Visit your app at [http://localhost:4200/index](http://localhost:4200/index).
+* Visit your app at [http://localhost:4200/index](http://localhost:4200).
 
 ## Espeficicações:
 - Mobile First;
