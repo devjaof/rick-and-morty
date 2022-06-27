@@ -9,9 +9,10 @@
     />
     <button class='btn btn-outline-success' type='submit'>Search</button>
   </form>
-  {{#each this.model.results as |episode|}}
-    <div class='card mb-2 p-2'>
-      <div class='body'>
+  <div class="row">
+    {{#each this.model.results as |episode|}}
+    <div class='card col-md-6'>
+      <div class='body p-2'>
         <h5 class='card-title'>{{episode.name}}</h5>
         <p class='card-text'>episode: {{episode.episode}}</p>
         <p class='card-text'>Date: {{episode.air_date}}</p>
@@ -21,6 +22,8 @@
     <p>Nada para ver aqui :/</p>
   {{/each}}
 </div>
+  </div>
+  
 <div class='buttons'>
   <button
     type='button'

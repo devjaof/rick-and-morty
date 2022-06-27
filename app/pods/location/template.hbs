@@ -1,22 +1,38 @@
 <h2>Locations</h2>
- <div class="container">
-    <form class="d-flex m-2" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+<div class='container'>
+  <form class='d-flex m-2' role='search'>
+    <input
+      class='form-control me-2'
+      type='search'
+      placeholder='Search'
+      aria-label='Search'
+    />
+    <button class='btn btn-outline-success' type='submit'>Search</button>
+  </form>
+  <div class='row'>
     {{#each this.model.results as |location|}}
-    <div class="card mb-2 p-2">
-      <div class="body">
-        <h5 class="card-title">{{location.name}}</h5> 
-        <p class="card-text">Type: {{location.type}}</p>
-        <p class="card-text">Dimension: {{location.dimension}}</p>
+      <div class='card col-md-6'>
+        <div class='body p-2'>
+          <h5 class='card-title'>{{location.name}}</h5>
+          <p class='card-text'>Type: {{location.type}}</p>
+          <p class='card-text'>Dimension: {{location.dimension}}</p>
+        </div>
       </div>
-    </div>
     {{else}}
       <p>Nada para ver aqui :/</p>
     {{/each}}
   </div>
-<div class="buttons">
-  <button type="button" class="btn btn-outline-secondary m-2" id="back">back</button>
-  <button type="button" class="btn btn-outline-secondary m-2" id="next">next</button>
+</div>
+
+<div class='buttons'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary m-2'
+    id='back'
+  >back</button>
+  <button
+    type='button'
+    class='btn btn-outline-secondary m-2'
+    id='next'
+  >next</button>
 </div>
