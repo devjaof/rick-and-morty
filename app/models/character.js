@@ -6,6 +6,5 @@ export default class CharacterModel extends Model {
   @attr('string') species;
   @attr('string') type;
   @attr('string') gender;
-
   @attr('string') image;
 }

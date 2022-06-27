@@ -1,30 +1,30 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object'
+import { action } from '@ember/object';
 
-export default class CharacterController extends Controller {
+export default class LocationController extends Controller {
   @service store;
 
   @tracked records = [];
   @tracked page = 1;
 
   @action
-  async loadCharacters() {
-    const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${this.page}`);
+  async loadLocations() {
+    const response = await fetch(`https://rickandmortyapi.com/api/location/?page=${this.page}`);
     const { results } = await response.json();
-
+    
     this.store.pushPayload({
-      character: results
+      location: results
     });
 
-    this.records = this.store.findAll('character');
+    this.records = this.store.findAll('location');
   };
 
   @action 
   nextPage() {
     this.page += 1;
 
-    this.loadCharacters();
+    this.loadLocations();
   };
 }

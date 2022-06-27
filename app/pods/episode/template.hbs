@@ -1,6 +1,5 @@
 <h2>Episodes</h2>
-<Buttons />
-<div class='container mb-5'>
+<div class='container mb-5'  {{did-insert (fn this.loadEpisodes)}}>
   <form class='d-flex m-2' role='search'>
     <input
       class='form-control me-2'
@@ -11,7 +10,7 @@
     <button class='btn btn-outline-success' type='submit'>Search</button>
   </form>
   <div class='row'>
-    {{#each this.model.results as |episode|}}
+    {{#each this.records as |episode|}}
       <div class='card col-md-6'>
         <div class='body p-2'>
           <h5 class='card-title'>{{episode.name}}</h5>
@@ -23,4 +22,5 @@
       <p>Nada para ver aqui :/</p>
     {{/each}}
   </div>
+  <Buttons  @nextPage={{fn this.nextPage}}/>
 </div>

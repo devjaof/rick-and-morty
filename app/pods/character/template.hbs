@@ -1,16 +1,16 @@
 <h2 class='mt-2'>Characters</h2>
-<Buttons />
-<div class='container'>
-  <form class=' m-2 w-100' role='search'>
-     <div class="form-group w-100 d-flex">
-      <Input class="form-control" @placeholder="Search by name"/>
-      <button class='btn btn-outline-success' type='submit'>Search</button>
-    </div>
-  </form>
+<div class='container' {{did-insert (fn this.loadCharacters)}}>
+  <div class="container">
+    <form class=' m-2 w-100' role='search'>
+      <div class="form-group w-100 d-flex">
+        <Input class="form-control" @placeholder="Search by name"/>
+        <button class='btn btn-outline-success' type='submit'>Search</button>
+      </div>
+    </form>
+  </div>
   <div class='row'>
-  
-    {{#each this.model as |character|}}
-      <div class='card col-md-3'>
+    {{#each this.records as |character|}}
+      <div class='card col-md-3' >
         <img
           class='card-img-top mt-2'
           src='{{character.image}}'
@@ -22,13 +22,14 @@
           <p class='card-text'>Species: {{character.species}}</p>
           <p class='card-text'>Type: {{character.type}}</p>
           <p class='card-text'>Gender: {{character.gender}}</p>
-          <p class='card-text'>Origin: {{character.origin.name}}</p>
-          <p class='card-text'>Location: {{character.location.name}}</p>
+          <p class='card-text'>Origin: {{character.originName}}</p>
+          <p class='card-text'>Location: {{character.locationName}}</p>
         </div>
       </div>
-
     {{else}}
       <p>Nada para ver aqui :/</p>
     {{/each}}
+    {{log this.records}}
   </div>
+  <Buttons @nextPage={{fn this.nextPage}}/>
 </div>
