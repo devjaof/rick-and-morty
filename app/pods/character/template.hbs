@@ -3,8 +3,8 @@
   <div class="container">
     <form class=' m-2 w-100' role='search'>
       <div class="form-group w-100 d-flex">
-        <Input class="form-control" @placeholder="Search by name"/>
-        <button class='btn btn-outline-success' type='submit'>Search</button>
+        <Input class="form-control" @value={{this.term}} />
+        <button {{on "click" (perform this.findRecords)}} class='btn btn-outline-success'>Search</button>
       </div>
     </form>
   </div>
