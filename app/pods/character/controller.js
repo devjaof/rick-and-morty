@@ -30,13 +30,15 @@ export default class CharacterController extends Controller {
     this.records = this.store.findAll('character');
   };
 
-  @task 
-  *filterRecords() {
-    if(!this.search) {return};
-    this.records = this.store.query('character', {
+  @action
+  filterRecords() {
+    this.get('store').query('character', {
       filter: {
-        name: this.search
+        name: 'Rick Sanchez'
       }
-    });
-  };
+    }).then(() => {
+      console.log('rodou o filter');
+      this.loadCharacters();
+    })
+  }
 }
