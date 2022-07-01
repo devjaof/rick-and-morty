@@ -1,9 +1,13 @@
 <h2 class='mt-2'>Characters</h2>
 <div class='container' {{did-insert (fn this.loadCharacters)}}>
   <form class=' m-2 w-100' role='search'>
-    <div class="form-group w-100 d-flex">
-      <Input class="form-control" @value={{this.search}} />
-      <button {{on "click" (perform this.filterRecords)}} class='btn btn-outline-success'>Search</button>
+    <div class="ml-auto d-flex flex-fill">
+      <Input 
+        class="form-control"
+        placeholder="Search for Characters" 
+        @key-up={{perform this.filterContent}}
+        {{!-- @value={{search}} --}}
+        />
     </div>
   </form>
   <div class='row'>
